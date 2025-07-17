@@ -32,7 +32,7 @@ A SwiftUI iOS app that judges how petty your grievances are using Claude AI. Sha
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/abderrahimghazali/Petty.git
 cd Petty
 ```
 
