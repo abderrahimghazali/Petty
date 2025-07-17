@@ -28,6 +28,7 @@ A SwiftUI iOS app that judges how petty your grievances are using Claude AI. Sha
 ### Prerequisites
 - Xcode 15.0 or later
 - iOS 17.0 or later
+- [XcodeGen](https://github.com/yonaskolb/XcodeGen) - Install via Homebrew: `brew install xcodegen`
 - Claude API key from [Anthropic Console](https://console.anthropic.com)
 
 ### 1. Clone the Repository
@@ -36,12 +37,17 @@ git clone https://github.com/abderrahimghazali/Petty.git
 cd Petty
 ```
 
-### 2. Open in Xcode
+### 2. Generate Xcode Project
+```bash
+xcodegen generate
+```
+
+### 3. Open in Xcode
 ```bash
 open Petty.xcodeproj
 ```
 
-### 3. Add Your Claude API Key
+### 4. Add Your Claude API Key
 
 #### Method 1: Using Info.plist (Recommended)
 
@@ -76,7 +82,13 @@ open Petty.xcodeproj
    ```
 4. Comment out the Info.plist option
 
-### 4. Build and Run
+### 5. Configure Development Team (Optional)
+If you want to run on a physical device:
+- Open `project.yml`
+- Set your `DEVELOPMENT_TEAM` ID in the settings section
+- Run `xcodegen generate` again
+
+### 6. Build and Run
 - Select your target device or simulator
 - Press `Cmd + R` to build and run
 
@@ -86,11 +98,13 @@ open Petty.xcodeproj
 - Add `Info.plist` to your `.gitignore` file
 - The app automatically falls back to mock data if no API key is configured
 - Use Info.plist method for production apps
+- **Xcode project files are excluded** from git to prevent sensitive team/certificate info from being shared
 
 ## 📁 Project Structure
 
 ```
 Petty/
+├── project.yml                 # XcodeGen project configuration
 ├── PettyApp.swift              # App entry point
 ├── ContentView.swift           # Main view controller
 ├── PettinessMeterView.swift    # Main pettiness meter interface
