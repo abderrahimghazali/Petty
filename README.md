@@ -49,8 +49,6 @@ open Petty.xcodeproj
 
 ### 4. Add Your Claude API Key
 
-#### Method 1: Using Info.plist (Recommended)
-
 1. **Create Info.plist file:**
    - In Xcode, right-click on the `Petty` folder in the navigator
    - Select "New File..." → "Property List"
@@ -70,17 +68,6 @@ open Petty.xcodeproj
    ├── Root (Dictionary)
    │   └── CLAUDE_API_KEY (String) = "sk-ant-api03-your-actual-key-here"
    ```
-
-#### Method 2: Direct Key (Quick Testing)
-
-1. Open `Petty/ClaudeAPIService.swift`
-2. Find the API key configuration section
-3. Uncomment and modify the direct key option:
-   ```swift
-   // Option 1: Add your API key directly (less secure)
-   private let apiKey = "sk-ant-api03-your-actual-key-here"
-   ```
-4. Comment out the Info.plist option
 
 ### 5. Configure Development Team (Optional)
 If you want to run on a physical device:
